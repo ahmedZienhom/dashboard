@@ -1,0 +1,41 @@
+<div class="grid grid-cols-1 lg:grid-cols-12 grid-rows-1 mt-6 lg:gap-8 gap-2">
+    <div class="lg:col-span-9 bg-white rounded-lg  p-4" #chartContainer>
+        <h2 class="font-medium text-2xl mb-4">Report</h2>
+
+        <ngx-charts-area-chart 
+        [view]="[chartWidth - 10, 400]"
+        [scheme]="colorScheme"
+        [results]="chartData"
+        [gradient]="true"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [autoScale]="true"
+        [animations]="true"
+        [showGridLines]="false"
+        [curve]="curve"
+        [yScaleMin]="10000"
+        >
+        </ngx-charts-area-chart>
+    </div>
+    <div class="lg:col-span-3 bg-white rounded-lg p-4" #barContainer>
+        <h2 class="font-medium text-2xl mb-4">Visits</h2>
+        <ngx-charts-bar-vertical class="block h-full w-full"
+        [view]="[barWidth - 10 , 400]"
+        [showGridLines]="false"
+        [scheme]="colorScheme"
+        [results]="barData"
+        [gradient]="false"
+        [xAxis]="true"
+        [yAxis]="true"
+        [legend]="false"
+        [showXAxisLabel]="false"
+        [showYAxisLabel]="false"
+        [xAxisLabel]="'Year'"
+        [yAxisLabel]="'Value'"
+        [roundEdges]="true">
+        </ngx-charts-bar-vertical>
+    </div>
+</div>

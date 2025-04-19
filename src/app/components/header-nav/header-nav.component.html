@@ -1,0 +1,82 @@
+
+
+<nav class="bg-white border-gray-200 ">
+    <div class="flex flex-wrap items-center justify-between p-4">
+        <a routerLink="" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <i class="text-blue-500 fa-brands fa-servicestack fa-2xl"></i>
+            <span class="text-black self-center text-2xl font-semibold whitespace-nowrap ">Manager <span class="text-blue-500">Pro</span></span>
+        </a>
+        <div class="flex">
+        <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="lg:hidden text-gray-500  hover:bg-gray-100  focus:outline-none focus:ring-4 focus:ring-gray-200  rounded-lg text-sm p-2.5 me-1">
+            <i class="fa-solid fa-search fa-xl "></i>
+            <span class="sr-only">Search</span>
+        </button>
+        <div class="relative hidden lg:block">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <i class="fa-solid fa-search"></i>
+            <span class="sr-only">Search icon</span>
+            </div>
+            <input type="text" id="search-navbar" class="block w-full p-2 pe-20 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 " placeholder="Search...">
+        </div>
+        
+        <button data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar" aria-controls="separator-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+        </div>
+
+
+        <div class="icons hidden lg:flex gap-4">
+            <a routerLink="orders" class="flex justify-center items-center w-10 h-10 rounded-md bg-gray-200 text-gray-400">
+                <i class="fa fa-briefcase"></i>
+            </a>
+            <a routerLink="message" class="relative flex justify-center items-center w-10 h-10 rounded-md bg-gray-200 text-gray-400">
+                <i class="fa fa-bell"></i>
+                <div class="absolute top-0 end-0 bg-red-400 w-3 h-3 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+            </a>
+        </div>
+        <div class="relative">
+            <button type="button" (click)="truggerDropdown()" class="flex text-sm items-center gap-4" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+            
+                <div class="rounded-full">
+                    <span class="sr-only">Open user menu</span>
+                    <img class="w-8 h-8 rounded-full" src="modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png (1).webp" alt="user photo">
+                </div>
+                <span class="font-black hidden lg:block">ahmed zienhom <i class="fa fa-angle-down"></i></span>
+            </button>
+            
+            <div [ngClass]="isDropdownOpen ? 'transition ease-out duration-300 transform opacity-100 scale-100 block': 'hidden transition ease-out duration-75 transform opacity-0 scale-75'" 
+            class="z-50 absolute my-4 right-0 py-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm " id="user-dropdown">
+                <div class="px-4 py-3 lg:hidden flex gap-4">      
+                        <a routerLink="orders" class="flex justify-center items-center w-10 h-10 rounded-md bg-gray-200 text-gray-400">
+                            <i class="fa fa-briefcase"></i>
+                        </a>
+                        <a routerLink="message" class="relative flex justify-center items-center w-10 h-10 rounded-md bg-gray-200 text-gray-400">
+                            <i class="fa fa-bell"></i>
+                            <div class="absolute top-0 end-0 bg-red-400 w-3 h-3 rounded-full translate-x-1/2 -translate-y-1/2"></div>
+                        </a>
+                </div>
+                <ul class="py-2" aria-labelledby="user-menu-button">
+                <li>
+                    <a routerLink="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Dashboard</a>
+                </li>
+                <li>
+                    <a routerLink="settings" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</a>
+                </li>
+                <li>
+                    <a (click)="logout()" class="cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-search">
+            <div class="relative mt-3 lg:hidden">
+            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            </div>
+            <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Search...">
+            </div>
+
+        </div>
+    </div>
+  </nav>
+  
+<app-side-nav> </app-side-nav>

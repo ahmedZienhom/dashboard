@@ -1,0 +1,43 @@
+[
+    {
+      "itemName": "Wireless Headphones",
+      "qty": 2,
+      "orderDate": "2025-04-15",
+      "amount": 120.99,
+      "status": "Shipped",
+      "image": "anker-soundcore-q20i-b2b-wireless-headphone-blue-a3004h31-p1-300x300.webp"
+    },
+    {
+      "itemName": "Smartphone Charger",
+      "qty": 1,
+      "orderDate": "2025-04-10",
+      "amount": 18.5,
+      "status": "Delivered",
+      "image": "31toann5b4L._SR290,290_.jpg"
+    },
+    {
+      "itemName": "Bluetooth Speaker",
+      "qty": 3,
+      "orderDate": "2025-03-29",
+      "amount": 75.0,
+      "status": "Processing",
+      "image": "71h-cpzgkhl._ac_sx569_.jpg"
+    },
+    {
+      "itemName": "Smartwatch",
+      "qty": 1,
+      "orderDate": "2025-04-17",
+      "amount": 220.0,
+      "status": "Pending",
+      "image": "71r1R4Osl-L.jpg"
+    },
+    {
+      "itemName": "Gaming Mouse",
+      "qty": 4,
+      "orderDate": "2025-04-01",
+      "amount": 150.0,
+      "status": "Cancelled",
+      "image": "61AcT0ZuO3L.jpg"
+    }
+  ]
+  

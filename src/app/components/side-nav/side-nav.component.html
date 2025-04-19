@@ -1,0 +1,74 @@
+<aside id="separator-sidebar" class="lg:mt-16 mt-0 fixed top-0 left-0 z-40 w-full lg:w-64 h-screen transition-transform -translate-x-full lg:translate-x-0" aria-label="Sidebar">
+     
+   <div class="h-full px-3 py-4 overflow-y-auto bg-white">
+      <button data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar" aria-controls="separator-sidebar" type="button" class="flex items-center p-2 mt-2 text-sm  ms-auto text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+         <i class="fa-solid fa-x "></i>
+     </button>
+      <ul class="space-y-2 font-medium">
+         <li>
+            <a routerLink="dashboard" routerLinkActive="bg-blue-200 text-blue-400" class="flex items-center p-2 text-gray- rounded-lg  hover:bg-gray-100  group">
+              <i class="fa-solid fa-house"></i>
+               <span class="ms-3">Dashboard</span>
+            </a>
+         </li>
+         <li>
+            <a routerLink="orders" routerLinkActive="bg-blue-200 text-blue-400" class="flex items-center p-2 text-gray- rounded-lg  hover:bg-gray-100  group">
+              <i class="fa-solid fa-cart-shopping"></i>
+               <span class="flex-1 ms-3 whitespace-nowrap">Orders</span>
+            </a>
+         </li>
+         <li>
+            <a routerLink="users" routerLinkActive="bg-blue-200 text-blue-400"  class="flex items-center p-2 text-gray- rounded-lg  hover:bg-gray-100  group">
+              <i class="fa-regular fa-user"></i>
+               <span class="flex-1 ms-3 whitespace-nowrap">Users</span>
+            </a>
+         </li>
+         <li>
+            <a routerLink="items" routerLinkActive="bg-blue-200 text-blue-400"  class="flex items-center p-2 text-gray- rounded-lg  hover:bg-gray-100  group">
+              <i class="fa-solid fa-shop"></i>
+               <span class="flex-1 ms-3 whitespace-nowrap">Items</span>
+            </a>
+         </li>
+         <li>
+            <a routerLink="transactions" class="flex items-center p-2 text-gray- rounded-lg  hover:bg-gray-100  group">
+              <i class="fa-regular fa-clipboard"></i>
+               <span class="flex-1 ms-3 whitespace-nowrap">Tranactions</span>
+            </a>
+         </li>
+         <li>
+            <a routerLink="reports" routerLinkActive="bg-blue-200 text-blue-400"  class="flex items-center p-2 text-gray- rounded-lg  hover:bg-gray-100  group">
+              <i class="fa-regular fa-file-lines"></i>
+               <span class="flex-1 ms-3 whitespace-nowrap">Reports</span>
+            </a>
+         </li>
+
+      </ul>
+      <ul class="pt-4 mt-4 space-y-2 font-medium border-t border-gray-200 ">
+         <li>
+            <a routerLink="message" routerLinkActive="bg-blue-200 text-blue-400"  class="flex items-center p-2 text-gray- transition duration-75 rounded-lg hover:bg-gray-100   group">
+              <i class="fa-regular fa-comment-dots"></i>
+               <span class="ms-3">Message</span>
+               <span class="inline-flex items-center ms-auto justify-center w-2 h-2 p-2 text-sm font-medium bg-red-400 rounded-full"></span>
+            </a>
+         </li>
+         <li>
+            <a routerLink="support" routerLinkActive="bg-blue-200 text-blue-400"  class="flex items-center p-2 text-gray- transition duration-75 rounded-lg hover:bg-gray-100   group">
+              <i class="fa-solid fa-life-ring"></i>
+               <span class="ms-3">Support</span>
+            </a>
+         </li>
+         <li>
+            <a routerLink="settings" routerLinkActive="bg-blue-200 text-blue-400"  class="flex items-center p-2 text-gray- transition duration-75 rounded-lg hover:bg-gray-100   group">
+              <i class="fa fa-gear"></i>
+               <span class="ms-3">Settings</span>
+            </a>
+         </li>
+         <li>
+            <a routerLink="help" routerLinkActive="bg-blue-200 text-blue-400" class="flex items-center p-2 text-gray- transition duration-75 rounded-lg hover:bg-gray-100   group">
+               <i class="fa-solid fa-circle-question"></i>
+               <span class="ms-3">Help</span>
+            </a>
+         </li>
+      </ul>
+   </div>
+</aside>
