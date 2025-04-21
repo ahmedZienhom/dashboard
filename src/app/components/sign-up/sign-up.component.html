@@ -1,69 +1,122 @@
 <div class="flex flex-col items-center justify-center w-full max-w-md p-6 space-y-4 bg-white rounded-lg shadow md:space-y-6 sm:p-8">
-    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl ">
-        Create an account
+    <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+      Create an account
     </h1>
-    
-    
-    <form [formGroup]="registerGroup" (ngSubmit)="register()" class="max-w-md mx-auto">
-        <div class="grid md:grid-cols-2 gap-2 md:gap-x-6">
-            <div  class="relative z-0 w-full mb-5 group">
-                <input formControlName="fName" [ngClass]="{'border-red-700 text-red-800': registerGroup.get('fName')?.errors && registerGroup.get('fName')?.touched,
-                'border-gray-300 text-gray-900': !(registerGroup.get('fName')?.errors && registerGroup.get('fName')?.touched),
-                'border-green-600 text-greborder-green-600': registerGroup.get('fName')?.valid && registerGroup.get('fName')?.touched}" type="text" name="floating_first_name" id="floating_first_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-nonefocus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                <label for="floating_first_name" [ngClass]="{'text-red-500': registerGroup.get('fName')?.errors && registerGroup.get('fName')?.touched,
-                'text-gray-500': !(registerGroup.get('fName')?.errors && registerGroup.get('fName')?.touched),
-                'text-green-500': registerGroup.get('fName')?.valid && registerGroup.get('fName')?.touched
-                }" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First name</label>
-            </div>
-            <div class="relative z-0 w-full mb-5 group">
-                <input formControlName="lName" [ngClass]="{'border-red-700 text-red-800': registerGroup.get('lName')?.errors && registerGroup.get('lName')?.touched,
-                'border-gray-300 text-gray-900': !(registerGroup.get('lName')?.errors && registerGroup.get('lName')?.touched),
-                'border-green-600 text-greborder-green-600': registerGroup.get('lName')?.valid && registerGroup.get('lName')?.touched}" type="text" name="floating_last_name" id="floating_last_name" class="group block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-nonefocus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-                <label for="floating_last_name" [ngClass]="{'text-red-500': registerGroup.get('lName')?.errors && registerGroup.get('lName')?.touched,
-                'text-gray-500': !(registerGroup.get('lName')?.errors && registerGroup.get('lName')?.touched),
-                'text-green-500': registerGroup.get('lName')?.valid && registerGroup.get('lName')?.touched
-                }" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last name</label>
-            </div>
-            <p class="text-blue-400 col-span-2 mb-2"><i class="fa fa-circle-exclamation"></i> write letters only </p>
-            <p class="text-blue-400 col-span-2 mb-2"><i class="fa fa-exclamation-circle"></i> write at least 3 letters</p>
-        </div>
-        <div class="relative z-0 w-full mb-5 group">
-            <input formControlName="email" [ngClass]="{'border-red-700 text-red-800': registerGroup.get('email')?.errors && registerGroup.get('email')?.touched,
+  
+    <form [formGroup]="registerGroup" (ngSubmit)="register()" class="w-64 md:w-96">
+      <div class="relative z-0 w-full mb-5 group">
+        <input formControlName="name"
+          [ngClass]="{
+            'border-red-700 text-red-800': registerGroup.get('name')?.errors && registerGroup.get('name')?.touched,
+            'border-gray-300 text-gray-900': !(registerGroup.get('name')?.errors && registerGroup.get('name')?.touched),
+            'border-green-600 text-green-600': registerGroup.get('name')?.valid && registerGroup.get('name')?.touched
+          }"
+          type="name" name="floating_name" id="floating_name"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" " />
+        <label for="floating_name"
+          [ngClass]="{
+            'text-red-500': registerGroup.get('name')?.errors && registerGroup.get('name')?.touched,
+            'text-gray-500': !(registerGroup.get('name')?.errors && registerGroup.get('name')?.touched),
+            'text-green-500': registerGroup.get('name')?.valid && registerGroup.get('name')?.touched
+          }"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">name</label>
+        <p class="text-blue-400 mt-5 mb-2"><i class="fa fa-exclamation-circle"></i> write a valid name</p>
+      </div>
+  
+      <div class="relative z-0 w-full mb-5 group">
+        <input formControlName="email"
+          [ngClass]="{
+            'border-red-700 text-red-800': registerGroup.get('email')?.errors && registerGroup.get('email')?.touched,
             'border-gray-300 text-gray-900': !(registerGroup.get('email')?.errors && registerGroup.get('email')?.touched),
-            'border-green-600 text-greborder-green-600': registerGroup.get('email')?.valid && registerGroup.get('email')?.touched}" type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-nonefocus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-            <label for="floating_email" [ngClass]="{'text-red-500': registerGroup.get('email')?.errors && registerGroup.get('email')?.touched,
+            'border-green-600 text-green-600': registerGroup.get('email')?.valid && registerGroup.get('email')?.touched
+          }"
+          type="email" name="floating_email" id="floating_email"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-nonefocus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" " />
+        <label for="floating_email"
+          [ngClass]="{
+            'text-red-500': registerGroup.get('email')?.errors && registerGroup.get('email')?.touched,
             'text-gray-500': !(registerGroup.get('email')?.errors && registerGroup.get('email')?.touched),
             'text-green-500': registerGroup.get('email')?.valid && registerGroup.get('email')?.touched
-            }" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
-            <p class="text-blue-400 mt-5 mb-2"><i class="fa fa-exclamation-circle"></i> write a valid email</p>
-        </div>
-        
-        <div class="relative z-0 w-full mb-5 group">
-            <input formControlName="pw" [ngClass]="{'border-red-700 text-red-800': registerGroup.get('pw')?.errors && registerGroup.get('pw')?.touched,
-            'border-gray-300 text-gray-900': !(registerGroup.get('pw')?.errors && registerGroup.get('pw')?.touched),
-            'border-green-600 text-greborder-green-600': registerGroup.get('pw')?.valid && registerGroup.get('pw')?.touched}" type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-nonefocus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-            <label for="floating_password" [ngClass]="{'border-red-700 text-red-800': registerGroup.get('pw')?.errors && registerGroup.get('pw')?.touched,
-            'border-gray-300 text-gray-900': !(registerGroup.get('pw')?.errors && registerGroup.get('pw')?.touched),
-            'border-green-600 text-greborder-green-600': registerGroup.get('pw')?.valid && registerGroup.get('pw')?.touched}" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-            <p class="text-blue-400 mt-5 mb-2"><i class="fa fa-exclamation-circle"></i> write at least 8 characters</p>
-        </div>
-        <div class="relative z-0 w-full mb-5 group">
-            <input [ngClass]="{'border-red-700 text-red-800': registerGroup.getError('mismatch') && registerGroup.get('confirmPw')?.touched,
-            'border-gray-300 text-gray-900': !(registerGroup.getError('mismatch') && registerGroup.get('confirmPw')?.touched),
-            'border-green-600 text-greborder-green-600': !registerGroup.getError('mismatch') && registerGroup.get('confirmPw')?.touched}" formControlName="confirmPw" type="password" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-nonefocus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
-            <label for="floating_repeat_password" [ngClass]="{'border-red-700 text-red-800': registerGroup.getError('mismatch') && registerGroup.get('confirmPw')?.touched,
-            'border-gray-300 text-gray-900': !(registerGroup.getError('mismatch') && registerGroup.get('confirmPw')?.touched),
-            'border-green-600 text-greborder-green-600': !registerGroup.getError('mismatch') && registerGroup.get('confirmPw')?.touched}" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
-            <p class="text-blue-400 mt-5 mb-2"><i class="fa fa-exclamation-circle"></i> rewrite your password</p>
-        </div>
-        
-        <button type="submit" class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
+          }"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+          address</label>
+        <p class="text-blue-400 mt-5 mb-2"><i class="fa fa-exclamation-circle"></i> write a valid email</p>
+      </div>
+  
+      <div class="relative z-0 w-full mb-5 group">
+        <input formControlName="password"
+          [ngClass]="{
+            'border-red-700 text-red-800': registerGroup.get('password')?.errors && registerGroup.get('password')?.touched,
+            'border-gray-300 text-gray-900': !(registerGroup.get('password')?.errors && registerGroup.get('password')?.touched),
+            'border-green-600 text-green-600': registerGroup.get('password')?.valid && registerGroup.get('password')?.touched
+          }"
+          type="password" name="floating_password" id="floating_password"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-nonefocus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" " />
+        <label for="floating_password"
+          [ngClass]="{
+            ' text-red-800': registerGroup.get('password')?.errors && registerGroup.get('password')?.touched,
+            'border-gray-300 text-gray-900': !(registerGroup.get('password')?.errors && registerGroup.get('password')?.touched),
+            'border-green-600 text-green-600': registerGroup.get('password')?.valid && registerGroup.get('password')?.touched
+          }"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+        <p class="text-blue-400 mt-5 mb-2"><i class="fa fa-exclamation-circle"></i> write at least 8 characters</p>
+      </div>
+  
+      <div class="relative z-0 w-full mb-5 group">
+        <input formControlName="rePassword"
+          [ngClass]="{
+            'border-red-700 text-red-800': registerGroup.getError('mismatch') && registerGroup.get('rePassword')?.touched,
+            'border-gray-300 text-gray-900': !(registerGroup.getError('mismatch') && registerGroup.get('rePassword')?.touched),
+            'border-green-600 text-green-600': !registerGroup.getError('mismatch') && registerGroup.get('rePassword')?.touched
+          }"
+          type="password" name="repeat_password" id="floating_repeat_password"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-nonefocus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" " />
+        <label for="floating_repeat_password"
+          [ngClass]="{
+            'border-red-700 text-red-800': registerGroup.getError('mismatch') && registerGroup.get('rePassword')?.touched,
+            'border-gray-300 text-gray-900': !(registerGroup.getError('mismatch') && registerGroup.get('rePassword')?.touched),
+            'border-green-600 text-green-600': !registerGroup.getError('mismatch') && registerGroup.get('rePassword')?.touched
+          }"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
+          password</label>
+        <p class="text-blue-400 mt-5 mb-2"><i class="fa fa-exclamation-circle"></i> rewrite your password</p>
+      </div>
+  
+      <div class="relative z-0 w-full mb-5 group">
+        <input formControlName="phone"
+          [ngClass]="{
+            'border-red-700 text-red-800': registerGroup.get('phone')?.errors && registerGroup.get('phone')?.touched,
+            'border-gray-300 text-gray-900': !(registerGroup.get('phone')?.errors && registerGroup.get('phone')?.touched),
+            'border-green-600 text-green-600': registerGroup.get('phone')?.valid && registerGroup.get('phone')?.touched
+          }"
+          type="tel" name="floating_phone" id="floating_phone"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" " />
+        <label for="floating_phone"
+          [ngClass]="{
+            'border-red-700 text-red-800': registerGroup.get('phone')?.errors && registerGroup.get('phone')?.touched,
+            'border-gray-300 text-gray-900': !(registerGroup.get('phone')?.errors && registerGroup.get('phone')?.touched),
+            'border-green-600 text-green-600': registerGroup.get('phone')?.valid && registerGroup.get('phone')?.touched
+          }"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
+          number</label>
+        <p class="text-blue-400 mt-5 mb-2"><i class="fa fa-exclamation-circle"></i> write a valid phone number</p>
+      </div>
+  
+      <button type="submit"
+        class="mx-auto block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
     </form>
+  
     <p class="text-sm font-light text-gray-500">
-        Already have an account? <a routerLink="/login" class="font-medium text-blue-600 hover:underline ">Sign in</a>
+      Already have an account? <a routerLink="/login" class="font-medium text-blue-600 hover:underline ">Sign in</a>
     </p>
-    @if (exist) {
-        <p class="rounded-md bg-red-300 text-red-500 p-4">the email is exist</p>
+  
+    @if (msgError) {
+    <p class="rounded-md bg-red-300 text-red-500 p-4">{{msgError}}</p>
     }
-</div>
-
+  </div>
+  

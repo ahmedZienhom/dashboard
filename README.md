@@ -1,19 +1,19 @@
 # Angular Dashboard Project
 
-[![Angular Version](https://img.shields.io/badge/Angular-19+-dd0031.svg?logo=angular)](https://angular.io/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
 A responsive admin dashboard application with external API integrations for key analytics, charts, and recent orders table management.
 
 ## Features
+
 - 📊 Interactive charts using JSON server data
 - 🛠️ Modular component architecture
-- 🔒 Route protection with guards
+- 🔒 Route protection with guards and external authentication
+- 🔐 Authentication via [ecommerce.routemisr.com](https://ecommerce.routemisr.com/) using JWT
 - 📱 Responsive layouts
 - 🎨 Customizable UI components
 - 🌐 Product data sourced from [DummyJSON](https://dummyjson.com)
 
 ## Project Structure
+
 ```
 dashboard/
 ├── public/                # Static assets
@@ -31,59 +31,99 @@ dashboard/
 │   ├── core/              # Core functionality
 │   │   ├── guards/        # Route protection
 │   │   ├── services/      # Data services (API integrations)
-│   │   └── interfaces/    # Type definitions
+│   │   ├── interceptors/  # HTTP interceptors (e.g., add auth tokens)
+│   │   ├── interfaces/    # Type definitions
+│   │   └── environment/   # Environment configuration (BASE_URL etc.)
 │   │
-│   └── app-routing.module.ts # Routing configuration
+│   ├── layouts/           # Application layouts
+│   │   ├── auth-layout/   # Layout for auth-related pages
+│   │   └── blank-layout/  # Minimal layout without sidebar/navigation
 ```
 
 ## Quick Start
+
 1. Clone repository:
+
 ```bash
 git clone https://github.com/yourusername/dashboard.git
 cd dashboard
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start JSON Server for chart data:
+
 ```bash
 json-server --watch db.json
 ```
 
 4. Start development server:
+
 ```bash
 ng serve
 ```
 
-5. Access on `http://localhost:4200`
+5. Access the application at `http://localhost:4200`
+
+## Authentication
+
+Authentication is handled through an external API:\
+**Base URL**: `https://ecommerce.routemisr.com/`
+
+- **Login/Register** using the provided API.
+- **JWT** tokens are decoded using `jwt-decode` library to extract user information.
+- Tokens are automatically attached to protected API requests using an HTTP Interceptor.
+- User session is managed via localStorage.
+
+> **Note:** Make sure you install `jwt-decode`:
+>
+> ```bash
+> npm install jwt-decode
+> ```
 
 ## Key Components
-| Component      | Path                   | Description                      |
-|----------------|------------------------|----------------------------------|
-| `HeaderNav`    | `/components/header-nav` | Main navigation bar              |
-| `Analytics`    | `/components/analytics`  | Data visualization widgets       |
-| `RecentOrders` | `/components/recent-orders` | Table of recent orders with pagination |
-| `Report`       | `/components/report`     | Report generation interface      |
+
+| Component        | Path                        | Description                            |
+| ---------------- | --------------------------- | -------------------------------------- |
+| `HeaderNav`      | `/components/header-nav`    | Main navigation bar                    |
+| `Analytics`      | `/components/analytics`     | Data visualization widgets             |
+| `RecentOrders`   | `/components/recent-orders` | Table of recent orders with pagination |
+| `Report`         | `/components/report`        | Report generation interface            |
+| `Authentication` | `/components/auth`          | Login, Register and JWT handling       |
 
 ## API Configuration
+
 ### JSON Server
-A JSON Server is used for handling chart data. Ensure your dataset is properly placed in the `db.json` file in the root directory. Run the server with the following command:
+
+For handling local chart data (`db.json`):
+
 ```bash
 json-server --watch db.json
 ```
-This will make the data accessible to the application at runtime.
 
-### DummyJSON
-Product data is sourced from DummyJSON's API endpoint. No additional setup is required.
+Accessible locally during development.
+
+### External API - Ecommerce
+
+Authentication and product management are handled through the Ecommerce API.\
+Endpoints (example):
+
+- `/api/v1/auth/signup`
+- `/api/v1/auth/signin`
+- `/api/v1/products`
+- etc.
 
 ## Responsive Design
-The application layout is designed to adapt gracefully to different screen sizes:
-- Sidebar collapses or transforms on smaller screens.
-- Top navigation adjusts to display user profile, notifications, and search inputs seamlessly.
+
+The application layout is fully responsive:
+
+- Sidebar collapses or adapts on smaller screens.
+- Top navigation adjusts elements for mobile-friendly UX.
 
 ## License
-MIT © Ahmed Zienhom - See [LICENSE](LICENSE) for details
 
+MIT © Ahmed Zienhom - See [LICENSE](LICENSE) for details.

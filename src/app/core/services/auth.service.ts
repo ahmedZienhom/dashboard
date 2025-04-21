@@ -4,38 +4,25 @@ import { isPlatformBrowser } from '@angular/common';
 import { Ilogin } from '../interfaces/ilogin';
 import { platformBrowser } from '@angular/platform-browser';
 import { json } from 'd3';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpRequest } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private readonly _PLATFORM_ID = inject(PLATFORM_ID);
+  private readonly _HttpClient = inject(HttpClient);
+
   private accounts:Iregister[] = [];
 
 
-  addAccount(Data:Iregister):boolean{
-    if (isPlatformBrowser(this._PLATFORM_ID)) {
-      this.accounts = JSON.parse(localStorage.getItem('accounts') || '[]');
-      if(this.accounts.length === 0 || !this.accounts.some((account) => account.email === Data.email)){
-          this.accounts.push(Data);
-          localStorage.setItem('accounts', JSON.stringify(this.accounts));
-          localStorage.setItem('isLoggedIn', 'true');
-          localStorage.setItem('name', `${Data.fName} ${Data.lName}`);
-          return false;
-        }
-    }
-    return true;
+  addAccount(Data:Iregister):Observable<any>{
+    return this._HttpClient.post(`${environment.authBaseApiUrl}/api/v1/auth/signup`, Data);
   }
 
-  login(Data:Ilogin):boolean {
-    if(isPlatformBrowser(this._PLATFORM_ID)){
-      this.accounts = JSON.parse(localStorage.getItem('accounts') || '[]');
-
-      if(this.accounts.some(a => a.email == Data.email && a.pw == Data.pw)){
-        localStorage.setItem('isLoggedIn', 'true');
-        return true
-      }
-    }
-    return false
+  login(Data:Ilogin):Observable<any>{
+    return this._HttpClient.post(`${environment.authBaseApiUrl}/api/v1/auth/signin`, Data);
   }
 }
