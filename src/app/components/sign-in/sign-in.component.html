@@ -28,10 +28,14 @@
     </div>
     <button type="submit" class="text-white block mx-auto bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">login</button>
   </form>
+  
+  <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+    <a routerLink="/forget" class="font-medium text-blue-600 hover:underline dark:text-blue-500"> forget password ?</a>
+</p>
     <p class="text-sm font-light text-gray-500 dark:text-gray-400">
             Don't have an account yet? <a routerLink="/register" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Sign up</a>
         </p>
-  @if (!valid) {
-    <p class="rounded-md bg-red-300 text-red-500 p-4">the email and password is not exist</p>
+  @if (msgError) {
+    <p class="rounded-md bg-red-300 text-red-500 p-4">{{msgError}}</p>
     }
 </div>

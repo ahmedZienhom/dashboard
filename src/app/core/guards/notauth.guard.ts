@@ -10,7 +10,6 @@ export const notauthGuard: CanActivateFn = (route, state) => {
   if(isPlatformBrowser(_PLATFORM_ID)){
     const isLoggedIn = localStorage?.getItem('token');
     if (!isLoggedIn) {
-      console.log('hello');
       return true;
     }
     _Router.navigate(['/dashboard']);
