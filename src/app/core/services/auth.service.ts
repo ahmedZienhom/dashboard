@@ -16,10 +16,11 @@ export class AuthService {
   addAccount(Data:Iregister):boolean{
     if (isPlatformBrowser(this._PLATFORM_ID)) {
       this.accounts = JSON.parse(localStorage.getItem('accounts') || '[]');
-      if(this.accounts.length === 0 || this.accounts.some((account) => account.email !== Data.email)){
+      if(this.accounts.length === 0 || !this.accounts.some((account) => account.email === Data.email)){
           this.accounts.push(Data);
           localStorage.setItem('accounts', JSON.stringify(this.accounts));
           localStorage.setItem('isLoggedIn', 'true');
+          localStorage.setItem('name', `${Data.fName} ${Data.lName}`);
           return false;
         }
     }

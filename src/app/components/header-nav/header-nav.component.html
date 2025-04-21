@@ -35,17 +35,17 @@
             </a>
         </div>
         <div class="relative">
-            <button type="button" (click)="truggerDropdown()" class="flex text-sm items-center gap-4" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+            <button type="button" (click)="truggerDropdown()" class="flex text-sm items-center gap-4" id="user-menu-button" aria-expanded="false">
             
                 <div class="rounded-full">
                     <span class="sr-only">Open user menu</span>
                     <img class="w-8 h-8 rounded-full" src="modern-male-avatar-with-black-hair-and-hoodie-illustration-free-png (1).webp" alt="user photo">
                 </div>
-                <span class="font-black hidden lg:block">ahmed zienhom <i class="fa fa-angle-down"></i></span>
+                <span class="font-black hidden lg:block">{{name}} <i class="fa fa-angle-down"></i></span>
             </button>
             
             <div [ngClass]="isDropdownOpen ? 'transition ease-out duration-300 transform opacity-100 scale-100 block': 'hidden transition ease-out duration-75 transform opacity-0 scale-75'" 
-            class="z-50 absolute my-4 right-0 py-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm " id="user-dropdown">
+            class="z-50 absolute my-4 right-0 py-2 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow-sm " >
                 <div class="px-4 py-3 lg:hidden flex gap-4">      
                         <a routerLink="orders" class="flex justify-center items-center w-10 h-10 rounded-md bg-gray-200 text-gray-400">
                             <i class="fa fa-briefcase"></i>

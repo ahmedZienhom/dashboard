@@ -11,6 +11,6 @@ export class ItemsService {
   constructor() { }
 
   getItems(): Observable<any> {
-    return this._HttpClient.get('items.json');
+    return this._HttpClient.get('https://dummyjson.com/products');
   }
 }

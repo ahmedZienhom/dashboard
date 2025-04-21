@@ -10,10 +10,14 @@ export class ChartDataService {
   constructor() { }
 
   getChartData():Observable<any> {
-    return this._HttpClient.get('salesData.json');
+    return this._HttpClient.get('http://localhost:3000/sales');
   }
 
   getBarData():Observable<any> {
-    return this._HttpClient.get('barData.json');
+    return this._HttpClient.get('http://localhost:3000/visits');
+  }
+
+  getSummary():Observable<any>{
+    return this._HttpClient.get('http://localhost:3000/summary');
   }
 }

@@ -1,0 +1,118 @@
+{
+    "sales": [
+      {
+        "period": "Day",
+        "data": [
+          { "label": "00:00", "value": 5000 },
+          { "label": "03:00", "value": 3000 },
+          { "label": "06:00", "value": 4500 },
+          { "label": "09:00", "value": 7000 },
+          { "label": "12:00", "value": 9000 },
+          { "label": "15:00", "value": 11000 },
+          { "label": "18:00", "value": 8000 },
+          { "label": "21:00", "value": 6000 }
+        ]
+      },
+      {
+        "period": "Week",
+        "data": [
+          { "label": "Mon", "value": 45000 },
+          { "label": "Tue", "value": 50000 },
+          { "label": "Wed", "value": 48000 },
+          { "label": "Thu", "value": 60000 },
+          { "label": "Fri", "value": 59000 },
+          { "label": "Sat", "value": 70000 },
+          { "label": "Sun", "value": 30000 }
+        ]
+      },
+      {
+        "period": "Month",
+        "data": [
+          { "label": "Week 1", "value": 160000 },
+          { "label": "Week 2", "value": 175000 },
+          { "label": "Week 3", "value": 140000 },
+          { "label": "Week 4", "value": 190000 }
+        ]
+      },
+      {
+        "period": "Year",
+        "data": [
+          { "label": "Jan", "value": 600000 },
+          { "label": "Feb", "value": 580000 },
+          { "label": "Mar", "value": 650000 },
+          { "label": "Apr", "value": 630000 },
+          { "label": "May", "value": 700000 },
+          { "label": "Jun", "value": 670000 },
+          { "label": "Jul", "value": 720000 },
+          { "label": "Aug", "value": 690000 },
+          { "label": "Sep", "value": 710000 },
+          { "label": "Oct", "value": 730000 },
+          { "label": "Nov", "value": 750000 },
+          { "label": "Dec", "value": 770000 }
+        ]
+      }
+    ],
+    "visits": [
+      {
+        "period": "Day",
+        "data": [
+          { "label": "00:00", "value": 200 },
+          { "label": "03:00", "value": 150 },
+          { "label": "06:00", "value": 300 },
+          { "label": "09:00", "value": 500 },
+          { "label": "12:00", "value": 800 },
+          { "label": "15:00", "value": 900 },
+          { "label": "18:00", "value": 750 },
+          { "label": "21:00", "value": 400 }
+        ]
+      },
+      {
+        "period": "Week",
+        "data": [
+          { "label": "Mon", "value": 1200 },
+          { "label": "Tue", "value": 1600 },
+          { "label": "Wed", "value": 1400 },
+          { "label": "Thu", "value": 2000 },
+          { "label": "Fri", "value": 700 },
+          { "label": "Sat", "value": 1800 },
+          { "label": "Sun", "value": 300 }
+        ]
+      },
+      {
+        "period": "Month",
+        "data": [
+          { "label": "Week 1", "value": 5000 },
+          { "label": "Week 2", "value": 6000 },
+          { "label": "Week 3", "value": 5500 },
+          { "label": "Week 4", "value": 5800 }
+        ]
+      },
+      {
+        "period": "Year",
+        "data": [
+          { "label": "Jan", "value": 24000 },
+          { "label": "Feb", "value": 26000 },
+          { "label": "Mar", "value": 28000 },
+          { "label": "Apr", "value": 22000 },
+          { "label": "May", "value": 30000 },
+          { "label": "Jun", "value": 27000 },
+          { "label": "Jul", "value": 31000 },
+          { "label": "Aug", "value": 29000 },
+          { "label": "Sep", "value": 32000 },
+          { "label": "Oct", "value": 34000 },
+          { "label": "Nov", "value": 36000 },
+          { "label": "Dec", "value": 38000 }
+        ]
+      }
+    ],
+    "summary": {
+        "totalRevenue": 52600,
+        "totalRevenueChange": 3.4,
+        "todayRevenue": 1024,
+        "todayRevenueChange": -5.5,
+        "itemsSold": 22,
+        "usersActive": 11
+      }
+    
+  }
+  
